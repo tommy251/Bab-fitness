@@ -1,0 +1,116 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAB - Home Workouts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.min.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">BAB Workouts</div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link active" onclick="showSection('home')">Home</a></li>
+                <li><a href="#workouts" class="nav-link" onclick="showSection('workouts')">Workouts</a></li>
+                <li><a href="#trainers" class="nav-link" onclick="showSection('trainers')">Trainers</a></li>
+                <li><a href="#stats" class="nav-link" onclick="showSection('stats')">Stats</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="content-section active">
+        <div class="hero">
+            <h1>YOU ONLY FAIL, WHEN YOU STOP TRYING</h1>
+            <p>Transform your body with our expert-led home workout programs.</p>
+            <button class="cta-button">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Workouts Section -->
+    <section id="workouts" class="content-section">
+        <h2>Browse Workouts</h2>
+        <div class="workout-grid">
+            <div class="workout-card">
+                <img src="{{ url_for('static', filename='chest 1.jpeg') }}" alt="Home Chest Workout">
+                <h3>Home Chest Workout (No Equipment)</h3>
+                <p>45 min • 384 Cal • Hard</p>
+                <button onclick="completeWorkout()">Start Now</button>
+            </div>
+            <div class="workout-card">
+                <img src="{{ url_for('static', filename='TB1.jpeg') }}" alt="Total Body Strength">
+                <h3>Total Body Strength</h3>
+                <p>30 min • 300 Cal • Medium</p>
+                <button onclick="completeWorkout()">Start Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="content-section">
+        <h2>Our Trainers</h2>
+        <div class="trainer-grid">
+            <div class="trainer-card">
+                <img src="{{ url_for('static', filename='chris.jpeg') }}" alt="Chris Heria">
+                <h3>Chris Heria</h3>
+                <p>High Intensity Trainer • 7 Years Experience</p>
+                <p>Rating: 4.6 ★★★★★</p>
+            </div>
+            <div class="trainer-card">
+                <img src="{{ url_for('static', filename='kk.jpeg') }}" alt="Kassandra Lio">
+                <h3>Kassandra Lio</h3>
+                <p>High Intensity Trainer • 5 Years Experience</p>
+                <p>Rating: 4.8 ★★★★★</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="content-section">
+        <h2>Your Stats</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Workouts Completed</h3>
+                <p>88</p>
+            </div>
+            <div class="stat-card">
+                <h3>Active Programs</h3>
+                <p>32</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Congratulatory Popup -->
+    <div id="congrats-popup" class="popup">
+        <div class="popup-content">
+            <span class="check-icon">✔</span>
+            <h2>Congratulations!</h2>
+            <p>You've completed your workout! Keep up the great work.</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">BAB Workouts</div>
+            <div class="footer-contact">
+                <h4>Quick Contacts</h4>
+                <p>123 Fitness Street, Los Angeles, CA</p>
+                <p>+1 (800) 123-4567</p>
+                <p>support@babworkouts.com</p>
+            </div>
+            <div class="footer-tags">
+                <h4>Popular Tags</h4>
+                <p>Workouts • Fitness • Trainers • Health</p>
+            </div>
+        </div>
+        <p>© 2025 BAB Workouts. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.min.js') }}"></script>
+</body>
+</html>
